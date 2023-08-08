@@ -6,7 +6,7 @@ class Driver extends Car {
     public void drive() {
         if (getGas() > 0) {
             System.out.println("Driving the car.");
-            setGas(getGas() - 10); // Decrease gas by 10 units
+            setGas(getGas() - 10); 
         } else {
             System.out.println("The car is out of gas. Cannot drive.");
         }
@@ -15,7 +15,7 @@ class Driver extends Car {
     public void boost() {
         if (getGas() >= 20) {
             System.out.println("Boosting the car.");
-            setGas(getGas() - 20); // Decrease gas by 20 units
+            setGas(getGas() - 20); 
         } else {
             System.out.println("Not enough gas to boost.");
         }
@@ -23,6 +23,6 @@ class Driver extends Car {
 
     public void refuel() {
         System.out.println("Refueling the car.");
-        setGas(getGas() + 30); // Increase gas by 30 units
+        setGas(getGas() + 30); 
     }
 }
