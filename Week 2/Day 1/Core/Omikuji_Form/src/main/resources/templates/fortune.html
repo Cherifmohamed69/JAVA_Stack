@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/static/style.css}" />
+</head>
+<body>
+    <h1>Your Fortune</h1>
+    <div class="fortune-box">
+        <p>Your question: <span th:text="${question}"></span></p>
+        <p>Your fortune: <span th:text="${fortune}"></span></p>
+    </div>
+    <a th:href="@{/omikuji}">Go back</a>
+</body>
+</html>
