@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <div>
+        <h2>Add Expense</h2>
+        <form th:action="@{/add}" th:object="${expenseForm}" method="post">
+            <input type="text" th:field="*{name}" placeholder="Name">
+            <input type="text" th:field="*{vendor}" placeholder="Vendor">
+            <input type="number" th:field="*{amount}" placeholder="Amount">
+            <input type="text" th:field="*{description}" placeholder="Description">
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+    <div>
+        <h2>Expense List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Vendor</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="expense : ${expenses}">
+                    <td th:text="${expense.name}"></td>
+                    <td th:text="${expense.vendor}"></td>
+                    <td th:text="${expense.amount}"></td>
+                    <td th:text="${expense.description}"></td>
+                    <td>
+                        <a th:href="@{/edit/{id}(id=${expense.id})}">Edit</a>
+                        <a th:href="@{/delete/{id}(id=${expense.id})}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
